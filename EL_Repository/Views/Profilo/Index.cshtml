@@ -1,0 +1,93 @@
+﻿@model IEnumerable<EL_Repository.Profilo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_profilo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.logo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.indirizzo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.citta)
+        </th>
+ <th>
+            @Html.DisplayNameFor(model => model.desc_breve)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.desc_long)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Utenti.usename)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gallery.ID_gallery)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Categoria.Titolo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_profilo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.logo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.indirizzo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.citta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.desc_breve)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.desc_long)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Utenti.usename)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gallery.ID_gallery)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Categoria.Titolo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

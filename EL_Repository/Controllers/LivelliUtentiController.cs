@@ -1,0 +1,122 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace EL_Repository.Controllers
+{
+    public class LivelliUtentiController : Controller
+    {
+        private event_life_Entities db = new event_life_Entities();
+
+        //
+        // GET: /LivelliUtenti/
+
+        public ActionResult Index()
+        {
+            return View(db.Livello_Utenti.ToList());
+        }
+
+        //
+        // GET: /LivelliUtenti/Details/5
+
+        public ActionResult Details(int id = 0)
+        {
+            Livello_Utenti livello_utenti = db.Livello_Utenti.Find(id);
+            if (livello_utenti == null)
+            {
+                return HttpNotFound();
+            }
+            return View(livello_utenti);
+        }
+
+        //
+        // GET: /LivelliUtenti/Create
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        //
+        // POST: /LivelliUtenti/Create
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Livello_Utenti livello_utenti)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Livello_Utenti.Add(livello_utenti);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(livello_utenti);
+        }
+
+        //
+        // GET: /LivelliUtenti/Edit/5
+
+        public ActionResult Edit(int id = 0)
+        {
+            Livello_Utenti livello_utenti = db.Livello_Utenti.Find(id);
+            if (livello_utenti == null)
+            {
+                return HttpNotFound();
+            }
+            return View(livello_utenti);
+        }
+
+        //
+        // POST: /LivelliUtenti/Edit/5
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Livello_Utenti livello_utenti)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(livello_utenti).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(livello_utenti);
+        }
+
+        //
+        // GET: /LivelliUtenti/Delete/5
+
+        public ActionResult Delete(int id = 0)
+        {
+            Livello_Utenti livello_utenti = db.Livello_Utenti.Find(id);
+            if (livello_utenti == null)
+            {
+                return HttpNotFound();
+            }
+            return View(livello_utenti);
+        }
+
+        //
+        // POST: /LivelliUtenti/Delete/5
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Livello_Utenti livello_utenti = db.Livello_Utenti.Find(id);
+            db.Livello_Utenti.Remove(livello_utenti);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            db.Dispose();
+            base.Dispose(disposing);
+        }
+    }
+}

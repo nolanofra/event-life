@@ -1,0 +1,36 @@
+﻿@model EL_Repository.Livello_Utenti
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Livello_Utenti</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ID_livello)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ID_livello)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.livello)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.livello)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.descrizione)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.descrizione)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

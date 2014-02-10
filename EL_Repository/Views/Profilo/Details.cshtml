@@ -1,0 +1,92 @@
+﻿@model EL_Repository.Profilo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Profilo</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ID_profilo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ID_profilo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.logo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.logo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.indirizzo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.indirizzo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cap)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cap)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.citta)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.citta)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.desc_breve)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.desc_breve)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.desc_long)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.desc_long)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Utenti.usename)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Utenti.usename)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Gallery.ID_gallery)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Gallery.ID_gallery)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Categoria.Titolo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Categoria.Titolo)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

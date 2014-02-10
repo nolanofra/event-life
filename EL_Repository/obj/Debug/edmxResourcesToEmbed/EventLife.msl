@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="event_life_ModelStoreContainer" CdmEntityContainer="event_life_Entities">
+    <EntitySetMapping Name="Anagraficas">
+      <EntityTypeMapping TypeName="event_life_Model.Anagrafica">
+        <MappingFragment StoreEntitySet="Anagrafica">
+          <ScalarProperty Name="ID_anagrafica" ColumnName="ID_anagrafica" />
+          <ScalarProperty Name="data_nascita" ColumnName="data_nascita" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="cognome" ColumnName="cognome" />
+          <ScalarProperty Name="sesso" ColumnName="sesso" />
+          <ScalarProperty Name="codice_fiscale" ColumnName="codice_fiscale" />
+          <ScalarProperty Name="p_iva" ColumnName="p_iva" />
+          <ScalarProperty Name="indirizzo" ColumnName="indirizzo" />
+          <ScalarProperty Name="cap" ColumnName="cap" />
+          <ScalarProperty Name="citta" ColumnName="citta" />
+          <ScalarProperty Name="provincia" ColumnName="provincia" />
+          <ScalarProperty Name="carta_identita" ColumnName="carta_identita" />
+          <ScalarProperty Name="utente_id" ColumnName="utente_id" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="cell" ColumnName="cell" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categorias">
+      <EntityTypeMapping TypeName="event_life_Model.Categoria">
+        <MappingFragment StoreEntitySet="Categoria">
+          <ScalarProperty Name="ID_categoria" ColumnName="ID_categoria" />
+          <ScalarProperty Name="Titolo" ColumnName="Titolo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Eventis">
+      <EntityTypeMapping TypeName="event_life_Model.Eventi">
+        <MappingFragment StoreEntitySet="Eventi">
+          <ScalarProperty Name="Id_evento" ColumnName="Id_evento" />
+          <ScalarProperty Name="Titolo" ColumnName="Titolo" />
+          <ScalarProperty Name="desc_breve" ColumnName="desc_breve" />
+          <ScalarProperty Name="desc_lunga" ColumnName="desc_lunga" />
+          <ScalarProperty Name="gallery_id" ColumnName="gallery_id" />
+          <ScalarProperty Name="data_inizio" ColumnName="data_inizio" />
+          <ScalarProperty Name="data_fine" ColumnName="data_fine" />
+          <ScalarProperty Name="profilo_id" ColumnName="profilo_id" />
+          <ScalarProperty Name="categoria_id" ColumnName="categoria_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fotoes">
+      <EntityTypeMapping TypeName="event_life_Model.Foto">
+        <MappingFragment StoreEntitySet="Foto">
+          <ScalarProperty Name="ID_foto" ColumnName="ID_foto" />
+          <ScalarProperty Name="path" ColumnName="path" />
+          <ScalarProperty Name="ordine" ColumnName="ordine" />
+          <ScalarProperty Name="gallery_id" ColumnName="gallery_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Galleries">
+      <EntityTypeMapping TypeName="event_life_Model.Gallery">
+        <MappingFragment StoreEntitySet="Gallery">
+          <ScalarProperty Name="ID_gallery" ColumnName="ID_gallery" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gallery_tipo">
+      <EntityTypeMapping TypeName="event_life_Model.Gallery_tipo">
+        <MappingFragment StoreEntitySet="Gallery_tipo">
+          <ScalarProperty Name="ID_gallery_tipo" ColumnName="ID_gallery_tipo" />
+          <ScalarProperty Name="tipi_gallery_id" ColumnName="tipi_gallery_id" />
+          <ScalarProperty Name="profilo_id" ColumnName="profilo_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Livello_Utenti">
+      <EntityTypeMapping TypeName="event_life_Model.Livello_Utenti">
+        <MappingFragment StoreEntitySet="Livello_Utenti">
+          <ScalarProperty Name="ID_livello" ColumnName="ID_livello" />
+          <ScalarProperty Name="livello" ColumnName="livello" />
+          <ScalarProperty Name="descrizione" ColumnName="descrizione" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profiloes">
+      <EntityTypeMapping TypeName="event_life_Model.Profilo">
+        <MappingFragment StoreEntitySet="Profilo">
+          <ScalarProperty Name="longitudine" ColumnName="longitudine" />
+          <ScalarProperty Name="latitudine" ColumnName="latitudine" />
+          <ScalarProperty Name="ID_profilo" ColumnName="ID_profilo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="indirizzo" ColumnName="indirizzo" />
+          <ScalarProperty Name="cap" ColumnName="cap" />
+          <ScalarProperty Name="citta" ColumnName="citta" />
+          <ScalarProperty Name="desc_breve" ColumnName="desc_breve" />
+          <ScalarProperty Name="desc_long" ColumnName="desc_long" />
+          <ScalarProperty Name="utente_id" ColumnName="utente_id" />
+          <ScalarProperty Name="gallery_id" ColumnName="gallery_id" />
+          <ScalarProperty Name="categoria_id" ColumnName="categoria_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="event_life_Model.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Telefonoes">
+      <EntityTypeMapping TypeName="event_life_Model.Telefono">
+        <MappingFragment StoreEntitySet="Telefono">
+          <ScalarProperty Name="ID_telefono" ColumnName="ID_telefono" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="profilo_id" ColumnName="profilo_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Utentis">
+      <EntityTypeMapping TypeName="event_life_Model.Utenti">
+        <MappingFragment StoreEntitySet="Utenti">
+          <ScalarProperty Name="ID_utente" ColumnName="ID_utente" />
+          <ScalarProperty Name="usename" ColumnName="usename" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="livello_id" ColumnName="livello_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="event_life_Model.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="event_life_Model.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="event_life_Model.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="event_life_Model.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="event_life_Model.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="event_life_Model.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="event_life_Model.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="event_life_Model.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="event_life_Model.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

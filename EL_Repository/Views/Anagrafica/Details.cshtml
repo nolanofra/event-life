@@ -1,0 +1,127 @@
+﻿@model EL_Repository.Anagrafica
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Anagrafica</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ID_anagrafica)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ID_anagrafica)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.data_nascita)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.data_nascita)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cognome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cognome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.sesso)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.sesso)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.codice_fiscale)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.codice_fiscale)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.p_iva)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.p_iva)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.indirizzo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.indirizzo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cap)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cap)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.citta)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.citta)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.provincia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.provincia)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.carta_identita)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.carta_identita)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Utenti.usename)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Utenti.usename)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tel)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tel)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cell)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cell)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fax)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fax)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

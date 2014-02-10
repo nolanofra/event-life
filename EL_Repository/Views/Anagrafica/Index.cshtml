@@ -1,0 +1,123 @@
+﻿@model IEnumerable<EL_Repository.Anagrafica>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_anagrafica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data_nascita)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cognome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sesso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.codice_fiscale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.p_iva)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.indirizzo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.citta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.provincia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.carta_identita)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Utenti.usename)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cell)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fax)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_anagrafica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.data_nascita)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cognome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sesso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.codice_fiscale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.p_iva)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.indirizzo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.citta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.provincia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.carta_identita)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Utenti.usename)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cell)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fax)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

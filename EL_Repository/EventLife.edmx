@@ -1,0 +1,904 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="event_life_Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="event_life_ModelStoreContainer">
+          <EntitySet Name="Anagrafica" EntityType="event_life_Model.Store.Anagrafica" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Categoria" EntityType="event_life_Model.Store.Categoria" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Eventi" EntityType="event_life_Model.Store.Eventi" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Foto" EntityType="event_life_Model.Store.Foto" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Gallery" EntityType="event_life_Model.Store.Gallery" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Gallery_tipo" EntityType="event_life_Model.Store.Gallery_tipo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Livello_Utenti" EntityType="event_life_Model.Store.Livello_Utenti" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Profilo" EntityType="event_life_Model.Store.Profilo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="event_life_Model.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Telefono" EntityType="event_life_Model.Store.Telefono" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Utenti" EntityType="event_life_Model.Store.Utenti" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Anagrafica_Utenti" Association="event_life_Model.Store.FK_Anagrafica_Utenti">
+            <End Role="Utenti" EntitySet="Utenti" />
+            <End Role="Anagrafica" EntitySet="Anagrafica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Eventi_Categoria" Association="event_life_Model.Store.FK_Eventi_Categoria">
+            <End Role="Categoria" EntitySet="Categoria" />
+            <End Role="Eventi" EntitySet="Eventi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Eventi_Gallery" Association="event_life_Model.Store.FK_Eventi_Gallery">
+            <End Role="Gallery" EntitySet="Gallery" />
+            <End Role="Eventi" EntitySet="Eventi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Eventi_Profilo" Association="event_life_Model.Store.FK_Eventi_Profilo">
+            <End Role="Profilo" EntitySet="Profilo" />
+            <End Role="Eventi" EntitySet="Eventi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Foto_Gallery" Association="event_life_Model.Store.FK_Foto_Gallery">
+            <End Role="Gallery" EntitySet="Gallery" />
+            <End Role="Foto" EntitySet="Foto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gallery_Profilo" Association="event_life_Model.Store.FK_Gallery_Profilo">
+            <End Role="Profilo" EntitySet="Profilo" />
+            <End Role="Gallery" EntitySet="Gallery" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Profilo_Categoria" Association="event_life_Model.Store.FK_Profilo_Categoria">
+            <End Role="Categoria" EntitySet="Categoria" />
+            <End Role="Profilo" EntitySet="Profilo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Profilo_Gallery" Association="event_life_Model.Store.FK_Profilo_Gallery">
+            <End Role="Gallery" EntitySet="Gallery" />
+            <End Role="Profilo" EntitySet="Profilo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Profilo_Utenti" Association="event_life_Model.Store.FK_Profilo_Utenti">
+            <End Role="Utenti" EntitySet="Utenti" />
+            <End Role="Profilo" EntitySet="Profilo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Telefono_Profilo" Association="event_life_Model.Store.FK_Telefono_Profilo">
+            <End Role="Profilo" EntitySet="Profilo" />
+            <End Role="Telefono" EntitySet="Telefono" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Utenti_Livello_Utenti" Association="event_life_Model.Store.FK_Utenti_Livello_Utenti">
+            <End Role="Livello_Utenti" EntitySet="Livello_Utenti" />
+            <End Role="Utenti" EntitySet="Utenti" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Anagrafica">
+          <Key>
+            <PropertyRef Name="ID_anagrafica" />
+          </Key>
+          <Property Name="ID_anagrafica" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="data_nascita" Type="date" Nullable="false" />
+          <Property Name="nome" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="cognome" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="sesso" Type="nvarchar" MaxLength="1" />
+          <Property Name="codice_fiscale" Type="nvarchar" MaxLength="50" />
+          <Property Name="p_iva" Type="nvarchar" MaxLength="50" />
+          <Property Name="indirizzo" Type="nvarchar" MaxLength="100" />
+          <Property Name="cap" Type="nvarchar" MaxLength="10" />
+          <Property Name="citta" Type="nvarchar" MaxLength="50" />
+          <Property Name="provincia" Type="nvarchar" MaxLength="2" />
+          <Property Name="carta_identita" Type="nvarchar" MaxLength="50" />
+          <Property Name="utente_id" Type="int" Nullable="false" />
+          <Property Name="tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="cell" Type="nvarchar" MaxLength="50" />
+          <Property Name="fax" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Categoria">
+          <Key>
+            <PropertyRef Name="ID_categoria" />
+          </Key>
+          <Property Name="ID_categoria" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Titolo" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Eventi">
+          <Key>
+            <PropertyRef Name="Id_evento" />
+          </Key>
+          <Property Name="Id_evento" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Titolo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="desc_breve" Type="varchar" MaxLength="50" />
+          <Property Name="desc_lunga" Type="text" />
+          <Property Name="gallery_id" Type="int" />
+          <Property Name="data_inizio" Type="datetime" Nullable="false" />
+          <Property Name="data_fine" Type="datetime" Nullable="false" />
+          <Property Name="profilo_id" Type="int" Nullable="false" />
+          <Property Name="categoria_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Foto">
+          <Key>
+            <PropertyRef Name="ID_foto" />
+          </Key>
+          <Property Name="ID_foto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="path" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="ordine" Type="int" />
+          <Property Name="gallery_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gallery">
+          <Key>
+            <PropertyRef Name="ID_gallery" />
+          </Key>
+          <Property Name="ID_gallery" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="int" />
+        </EntityType>
+        <EntityType Name="Gallery_tipo">
+          <Key>
+            <PropertyRef Name="ID_gallery_tipo" />
+          </Key>
+          <Property Name="ID_gallery_tipo" Type="int" Nullable="false" />
+          <Property Name="tipi_gallery_id" Type="int" Nullable="false" />
+          <Property Name="profilo_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Livello_Utenti">
+          <Key>
+            <PropertyRef Name="ID_livello" />
+          </Key>
+          <Property Name="ID_livello" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="livello" Type="int" Nullable="false" />
+          <Property Name="descrizione" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Profilo">
+          <Key>
+            <PropertyRef Name="ID_profilo" />
+          </Key>
+          <Property Name="ID_profilo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="logo" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="indirizzo" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="cap" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="citta" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="latitudine" Type="decimal" Nullable="false" Scale="10" />
+          <Property Name="longitudine" Type="decimal" Nullable="false" Scale="10" />
+          <Property Name="desc_breve" Type="nvarchar" MaxLength="50" />
+          <Property Name="desc_long" Type="text" />
+          <Property Name="utente_id" Type="int" Nullable="false" />
+          <Property Name="gallery_id" Type="int" />
+          <Property Name="categoria_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Telefono">
+          <Key>
+            <PropertyRef Name="ID_telefono" />
+          </Key>
+          <Property Name="ID_telefono" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="tel" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="profilo_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Utenti">
+          <Key>
+            <PropertyRef Name="ID_utente" />
+          </Key>
+          <Property Name="ID_utente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="usename" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="livello_id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Anagrafica_Utenti">
+          <End Role="Utenti" Type="event_life_Model.Store.Utenti" Multiplicity="1" />
+          <End Role="Anagrafica" Type="event_life_Model.Store.Anagrafica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Utenti">
+              <PropertyRef Name="ID_utente" />
+            </Principal>
+            <Dependent Role="Anagrafica">
+              <PropertyRef Name="utente_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Eventi_Categoria">
+          <End Role="Categoria" Type="event_life_Model.Store.Categoria" Multiplicity="1" />
+          <End Role="Eventi" Type="event_life_Model.Store.Eventi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="ID_categoria" />
+            </Principal>
+            <Dependent Role="Eventi">
+              <PropertyRef Name="categoria_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Eventi_Gallery">
+          <End Role="Gallery" Type="event_life_Model.Store.Gallery" Multiplicity="0..1" />
+          <End Role="Eventi" Type="event_life_Model.Store.Eventi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gallery">
+              <PropertyRef Name="ID_gallery" />
+            </Principal>
+            <Dependent Role="Eventi">
+              <PropertyRef Name="gallery_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Eventi_Profilo">
+          <End Role="Profilo" Type="event_life_Model.Store.Profilo" Multiplicity="1" />
+          <End Role="Eventi" Type="event_life_Model.Store.Eventi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profilo">
+              <PropertyRef Name="ID_profilo" />
+            </Principal>
+            <Dependent Role="Eventi">
+              <PropertyRef Name="profilo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Foto_Gallery">
+          <End Role="Gallery" Type="event_life_Model.Store.Gallery" Multiplicity="1" />
+          <End Role="Foto" Type="event_life_Model.Store.Foto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gallery">
+              <PropertyRef Name="ID_gallery" />
+            </Principal>
+            <Dependent Role="Foto">
+              <PropertyRef Name="gallery_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gallery_Profilo">
+          <End Role="Profilo" Type="event_life_Model.Store.Profilo" Multiplicity="0..1" />
+          <End Role="Gallery" Type="event_life_Model.Store.Gallery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profilo">
+              <PropertyRef Name="ID_profilo" />
+            </Principal>
+            <Dependent Role="Gallery">
+              <PropertyRef Name="nome" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Profilo_Categoria">
+          <End Role="Categoria" Type="event_life_Model.Store.Categoria" Multiplicity="1" />
+          <End Role="Profilo" Type="event_life_Model.Store.Profilo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="ID_categoria" />
+            </Principal>
+            <Dependent Role="Profilo">
+              <PropertyRef Name="categoria_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Profilo_Gallery">
+          <End Role="Gallery" Type="event_life_Model.Store.Gallery" Multiplicity="0..1" />
+          <End Role="Profilo" Type="event_life_Model.Store.Profilo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gallery">
+              <PropertyRef Name="ID_gallery" />
+            </Principal>
+            <Dependent Role="Profilo">
+              <PropertyRef Name="gallery_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Profilo_Utenti">
+          <End Role="Utenti" Type="event_life_Model.Store.Utenti" Multiplicity="1" />
+          <End Role="Profilo" Type="event_life_Model.Store.Profilo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Utenti">
+              <PropertyRef Name="ID_utente" />
+            </Principal>
+            <Dependent Role="Profilo">
+              <PropertyRef Name="utente_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Telefono_Profilo">
+          <End Role="Profilo" Type="event_life_Model.Store.Profilo" Multiplicity="1" />
+          <End Role="Telefono" Type="event_life_Model.Store.Telefono" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profilo">
+              <PropertyRef Name="ID_profilo" />
+            </Principal>
+            <Dependent Role="Telefono">
+              <PropertyRef Name="profilo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Utenti_Livello_Utenti">
+          <End Role="Livello_Utenti" Type="event_life_Model.Store.Livello_Utenti" Multiplicity="1" />
+          <End Role="Utenti" Type="event_life_Model.Store.Utenti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Livello_Utenti">
+              <PropertyRef Name="ID_livello" />
+            </Principal>
+            <Dependent Role="Utenti">
+              <PropertyRef Name="livello_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="event_life_Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="event_life_Entities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Anagraficas" EntityType="event_life_Model.Anagrafica" />
+          <EntitySet Name="Categorias" EntityType="event_life_Model.Categoria" />
+          <EntitySet Name="Eventis" EntityType="event_life_Model.Eventi" />
+          <EntitySet Name="Fotoes" EntityType="event_life_Model.Foto" />
+          <EntitySet Name="Galleries" EntityType="event_life_Model.Gallery" />
+          <EntitySet Name="Gallery_tipo" EntityType="event_life_Model.Gallery_tipo" />
+          <EntitySet Name="Livello_Utenti" EntityType="event_life_Model.Livello_Utenti" />
+          <EntitySet Name="Profiloes" EntityType="event_life_Model.Profilo" />
+          <EntitySet Name="sysdiagrams" EntityType="event_life_Model.sysdiagram" />
+          <EntitySet Name="Telefonoes" EntityType="event_life_Model.Telefono" />
+          <EntitySet Name="Utentis" EntityType="event_life_Model.Utenti" />
+          <AssociationSet Name="FK_Anagrafica_Utenti" Association="event_life_Model.FK_Anagrafica_Utenti">
+            <End Role="Utenti" EntitySet="Utentis" />
+            <End Role="Anagrafica" EntitySet="Anagraficas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Eventi_Categoria" Association="event_life_Model.FK_Eventi_Categoria">
+            <End Role="Categoria" EntitySet="Categorias" />
+            <End Role="Eventi" EntitySet="Eventis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Profilo_Categoria" Association="event_life_Model.FK_Profilo_Categoria">
+            <End Role="Categoria" EntitySet="Categorias" />
+            <End Role="Profilo" EntitySet="Profiloes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Eventi_Gallery" Association="event_life_Model.FK_Eventi_Gallery">
+            <End Role="Gallery" EntitySet="Galleries" />
+            <End Role="Eventi" EntitySet="Eventis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Eventi_Profilo" Association="event_life_Model.FK_Eventi_Profilo">
+            <End Role="Profilo" EntitySet="Profiloes" />
+            <End Role="Eventi" EntitySet="Eventis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Foto_Gallery" Association="event_life_Model.FK_Foto_Gallery">
+            <End Role="Gallery" EntitySet="Galleries" />
+            <End Role="Foto" EntitySet="Fotoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gallery_Profilo" Association="event_life_Model.FK_Gallery_Profilo">
+            <End Role="Profilo" EntitySet="Profiloes" />
+            <End Role="Gallery" EntitySet="Galleries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Profilo_Gallery" Association="event_life_Model.FK_Profilo_Gallery">
+            <End Role="Gallery" EntitySet="Galleries" />
+            <End Role="Profilo" EntitySet="Profiloes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Utenti_Livello_Utenti" Association="event_life_Model.FK_Utenti_Livello_Utenti">
+            <End Role="Livello_Utenti" EntitySet="Livello_Utenti" />
+            <End Role="Utenti" EntitySet="Utentis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Profilo_Utenti" Association="event_life_Model.FK_Profilo_Utenti">
+            <End Role="Utenti" EntitySet="Utentis" />
+            <End Role="Profilo" EntitySet="Profiloes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Telefono_Profilo" Association="event_life_Model.FK_Telefono_Profilo">
+            <End Role="Profilo" EntitySet="Profiloes" />
+            <End Role="Telefono" EntitySet="Telefonoes" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(event_life_Model.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(event_life_Model.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+        <EntityType Name="Anagrafica">
+          <Key>
+            <PropertyRef Name="ID_anagrafica" />
+          </Key>
+          <Property Name="ID_anagrafica" Type="Int32" Nullable="false" />
+          <Property Name="data_nascita" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="nome" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="cognome" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="sesso" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="codice_fiscale" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="p_iva" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="indirizzo" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="cap" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="citta" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="provincia" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="carta_identita" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="utente_id" Type="Int32" Nullable="false" />
+          <Property Name="tel" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="cell" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="fax" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Utenti" Relationship="event_life_Model.FK_Anagrafica_Utenti" FromRole="Anagrafica" ToRole="Utenti" />
+        </EntityType>
+        <EntityType Name="Categoria">
+          <Key>
+            <PropertyRef Name="ID_categoria" />
+          </Key>
+          <Property Name="ID_categoria" Type="Int32" Nullable="false" />
+          <Property Name="Titolo" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Eventis" Relationship="event_life_Model.FK_Eventi_Categoria" FromRole="Categoria" ToRole="Eventi" />
+          <NavigationProperty Name="Profiloes" Relationship="event_life_Model.FK_Profilo_Categoria" FromRole="Categoria" ToRole="Profilo" />
+        </EntityType>
+        <EntityType Name="Eventi">
+          <Key>
+            <PropertyRef Name="Id_evento" />
+          </Key>
+          <Property Name="Id_evento" Type="Int32" Nullable="false" />
+          <Property Name="Titolo" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="desc_breve" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="desc_lunga" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="gallery_id" Type="Int32" />
+          <Property Name="data_inizio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="data_fine" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="profilo_id" Type="Int32" Nullable="false" />
+          <Property Name="categoria_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Categoria" Relationship="event_life_Model.FK_Eventi_Categoria" FromRole="Eventi" ToRole="Categoria" />
+          <NavigationProperty Name="Gallery" Relationship="event_life_Model.FK_Eventi_Gallery" FromRole="Eventi" ToRole="Gallery" />
+          <NavigationProperty Name="Profilo" Relationship="event_life_Model.FK_Eventi_Profilo" FromRole="Eventi" ToRole="Profilo" />
+        </EntityType>
+        <EntityType Name="Foto">
+          <Key>
+            <PropertyRef Name="ID_foto" />
+          </Key>
+          <Property Name="ID_foto" Type="Int32" Nullable="false" />
+          <Property Name="path" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ordine" Type="Int32" />
+          <Property Name="gallery_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Gallery" Relationship="event_life_Model.FK_Foto_Gallery" FromRole="Foto" ToRole="Gallery" />
+        </EntityType>
+        <EntityType Name="Gallery">
+          <Key>
+            <PropertyRef Name="ID_gallery" />
+          </Key>
+          <Property Name="ID_gallery" Type="Int32" Nullable="false" />
+          <Property Name="nome" Type="Int32" />
+          <NavigationProperty Name="Eventis" Relationship="event_life_Model.FK_Eventi_Gallery" FromRole="Gallery" ToRole="Eventi" />
+          <NavigationProperty Name="Fotoes" Relationship="event_life_Model.FK_Foto_Gallery" FromRole="Gallery" ToRole="Foto" />
+          <NavigationProperty Name="Profilo" Relationship="event_life_Model.FK_Gallery_Profilo" FromRole="Gallery" ToRole="Profilo" />
+          <NavigationProperty Name="Profiloes" Relationship="event_life_Model.FK_Profilo_Gallery" FromRole="Gallery" ToRole="Profilo" />
+        </EntityType>
+        <EntityType Name="Gallery_tipo">
+          <Key>
+            <PropertyRef Name="ID_gallery_tipo" />
+          </Key>
+          <Property Name="ID_gallery_tipo" Type="Int32" Nullable="false" />
+          <Property Name="tipi_gallery_id" Type="Int32" Nullable="false" />
+          <Property Name="profilo_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Livello_Utenti">
+          <Key>
+            <PropertyRef Name="ID_livello" />
+          </Key>
+          <Property Name="ID_livello" Type="Int32" Nullable="false" />
+          <Property Name="livello" Type="Int32" Nullable="false" />
+          <Property Name="descrizione" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Utentis" Relationship="event_life_Model.FK_Utenti_Livello_Utenti" FromRole="Livello_Utenti" ToRole="Utenti" />
+        </EntityType>
+        <EntityType Name="Profilo">
+          <Key>
+            <PropertyRef Name="ID_profilo" />
+          </Key>
+          <Property Name="ID_profilo" Type="Int32" Nullable="false" />
+          <Property Name="nome" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="logo" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="indirizzo" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="cap" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="citta" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="desc_breve" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="desc_long" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="utente_id" Type="Int32" Nullable="false" />
+          <Property Name="gallery_id" Type="Int32" />
+          <Property Name="categoria_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Categoria" Relationship="event_life_Model.FK_Profilo_Categoria" FromRole="Profilo" ToRole="Categoria" />
+          <NavigationProperty Name="Eventis" Relationship="event_life_Model.FK_Eventi_Profilo" FromRole="Profilo" ToRole="Eventi" />
+          <NavigationProperty Name="Galleries" Relationship="event_life_Model.FK_Gallery_Profilo" FromRole="Profilo" ToRole="Gallery" />
+          <NavigationProperty Name="Gallery" Relationship="event_life_Model.FK_Profilo_Gallery" FromRole="Profilo" ToRole="Gallery" />
+          <NavigationProperty Name="Utenti" Relationship="event_life_Model.FK_Profilo_Utenti" FromRole="Profilo" ToRole="Utenti" />
+          <NavigationProperty Name="Telefonoes" Relationship="event_life_Model.FK_Telefono_Profilo" FromRole="Profilo" ToRole="Telefono" />
+          <Property Type="Decimal" Name="latitudine" Nullable="false" Precision="18" Scale="10" />
+          <Property Type="Decimal" Name="longitudine" Nullable="false" Precision="18" Scale="10" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Telefono">
+          <Key>
+            <PropertyRef Name="ID_telefono" />
+          </Key>
+          <Property Name="ID_telefono" Type="Int32" Nullable="false" />
+          <Property Name="tel" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="profilo_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Profilo" Relationship="event_life_Model.FK_Telefono_Profilo" FromRole="Telefono" ToRole="Profilo" />
+        </EntityType>
+        <EntityType Name="Utenti">
+          <Key>
+            <PropertyRef Name="ID_utente" />
+          </Key>
+          <Property Name="ID_utente" Type="Int32" Nullable="false" />
+          <Property Name="usename" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="livello_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Anagraficas" Relationship="event_life_Model.FK_Anagrafica_Utenti" FromRole="Utenti" ToRole="Anagrafica" />
+          <NavigationProperty Name="Livello_Utenti" Relationship="event_life_Model.FK_Utenti_Livello_Utenti" FromRole="Utenti" ToRole="Livello_Utenti" />
+          <NavigationProperty Name="Profiloes" Relationship="event_life_Model.FK_Profilo_Utenti" FromRole="Utenti" ToRole="Profilo" />
+        </EntityType>
+        <Association Name="FK_Anagrafica_Utenti">
+          <End Role="Utenti" Type="event_life_Model.Utenti" Multiplicity="1" />
+          <End Role="Anagrafica" Type="event_life_Model.Anagrafica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Utenti">
+              <PropertyRef Name="ID_utente" />
+            </Principal>
+            <Dependent Role="Anagrafica">
+              <PropertyRef Name="utente_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Eventi_Categoria">
+          <End Role="Categoria" Type="event_life_Model.Categoria" Multiplicity="1" />
+          <End Role="Eventi" Type="event_life_Model.Eventi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="ID_categoria" />
+            </Principal>
+            <Dependent Role="Eventi">
+              <PropertyRef Name="categoria_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Profilo_Categoria">
+          <End Role="Categoria" Type="event_life_Model.Categoria" Multiplicity="1" />
+          <End Role="Profilo" Type="event_life_Model.Profilo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="ID_categoria" />
+            </Principal>
+            <Dependent Role="Profilo">
+              <PropertyRef Name="categoria_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Eventi_Gallery">
+          <End Role="Gallery" Type="event_life_Model.Gallery" Multiplicity="0..1" />
+          <End Role="Eventi" Type="event_life_Model.Eventi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gallery">
+              <PropertyRef Name="ID_gallery" />
+            </Principal>
+            <Dependent Role="Eventi">
+              <PropertyRef Name="gallery_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Eventi_Profilo">
+          <End Role="Profilo" Type="event_life_Model.Profilo" Multiplicity="1" />
+          <End Role="Eventi" Type="event_life_Model.Eventi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profilo">
+              <PropertyRef Name="ID_profilo" />
+            </Principal>
+            <Dependent Role="Eventi">
+              <PropertyRef Name="profilo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Foto_Gallery">
+          <End Role="Gallery" Type="event_life_Model.Gallery" Multiplicity="1" />
+          <End Role="Foto" Type="event_life_Model.Foto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gallery">
+              <PropertyRef Name="ID_gallery" />
+            </Principal>
+            <Dependent Role="Foto">
+              <PropertyRef Name="gallery_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gallery_Profilo">
+          <End Role="Profilo" Type="event_life_Model.Profilo" Multiplicity="0..1" />
+          <End Role="Gallery" Type="event_life_Model.Gallery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profilo">
+              <PropertyRef Name="ID_profilo" />
+            </Principal>
+            <Dependent Role="Gallery">
+              <PropertyRef Name="nome" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Profilo_Gallery">
+          <End Role="Gallery" Type="event_life_Model.Gallery" Multiplicity="0..1" />
+          <End Role="Profilo" Type="event_life_Model.Profilo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gallery">
+              <PropertyRef Name="ID_gallery" />
+            </Principal>
+            <Dependent Role="Profilo">
+              <PropertyRef Name="gallery_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Utenti_Livello_Utenti">
+          <End Role="Livello_Utenti" Type="event_life_Model.Livello_Utenti" Multiplicity="1" />
+          <End Role="Utenti" Type="event_life_Model.Utenti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Livello_Utenti">
+              <PropertyRef Name="ID_livello" />
+            </Principal>
+            <Dependent Role="Utenti">
+              <PropertyRef Name="livello_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Profilo_Utenti">
+          <End Role="Utenti" Type="event_life_Model.Utenti" Multiplicity="1" />
+          <End Role="Profilo" Type="event_life_Model.Profilo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Utenti">
+              <PropertyRef Name="ID_utente" />
+            </Principal>
+            <Dependent Role="Profilo">
+              <PropertyRef Name="utente_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Telefono_Profilo">
+          <End Role="Profilo" Type="event_life_Model.Profilo" Multiplicity="1" />
+          <End Role="Telefono" Type="event_life_Model.Telefono" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profilo">
+              <PropertyRef Name="ID_profilo" />
+            </Principal>
+            <Dependent Role="Telefono">
+              <PropertyRef Name="profilo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="event_life_ModelStoreContainer" CdmEntityContainer="event_life_Entities">
+          <EntitySetMapping Name="Anagraficas">
+            <EntityTypeMapping TypeName="event_life_Model.Anagrafica">
+              <MappingFragment StoreEntitySet="Anagrafica">
+                <ScalarProperty Name="ID_anagrafica" ColumnName="ID_anagrafica" />
+                <ScalarProperty Name="data_nascita" ColumnName="data_nascita" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="cognome" ColumnName="cognome" />
+                <ScalarProperty Name="sesso" ColumnName="sesso" />
+                <ScalarProperty Name="codice_fiscale" ColumnName="codice_fiscale" />
+                <ScalarProperty Name="p_iva" ColumnName="p_iva" />
+                <ScalarProperty Name="indirizzo" ColumnName="indirizzo" />
+                <ScalarProperty Name="cap" ColumnName="cap" />
+                <ScalarProperty Name="citta" ColumnName="citta" />
+                <ScalarProperty Name="provincia" ColumnName="provincia" />
+                <ScalarProperty Name="carta_identita" ColumnName="carta_identita" />
+                <ScalarProperty Name="utente_id" ColumnName="utente_id" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="cell" ColumnName="cell" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categorias">
+            <EntityTypeMapping TypeName="event_life_Model.Categoria">
+              <MappingFragment StoreEntitySet="Categoria">
+                <ScalarProperty Name="ID_categoria" ColumnName="ID_categoria" />
+                <ScalarProperty Name="Titolo" ColumnName="Titolo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Eventis">
+            <EntityTypeMapping TypeName="event_life_Model.Eventi">
+              <MappingFragment StoreEntitySet="Eventi">
+                <ScalarProperty Name="Id_evento" ColumnName="Id_evento" />
+                <ScalarProperty Name="Titolo" ColumnName="Titolo" />
+                <ScalarProperty Name="desc_breve" ColumnName="desc_breve" />
+                <ScalarProperty Name="desc_lunga" ColumnName="desc_lunga" />
+                <ScalarProperty Name="gallery_id" ColumnName="gallery_id" />
+                <ScalarProperty Name="data_inizio" ColumnName="data_inizio" />
+                <ScalarProperty Name="data_fine" ColumnName="data_fine" />
+                <ScalarProperty Name="profilo_id" ColumnName="profilo_id" />
+                <ScalarProperty Name="categoria_id" ColumnName="categoria_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fotoes">
+            <EntityTypeMapping TypeName="event_life_Model.Foto">
+              <MappingFragment StoreEntitySet="Foto">
+                <ScalarProperty Name="ID_foto" ColumnName="ID_foto" />
+                <ScalarProperty Name="path" ColumnName="path" />
+                <ScalarProperty Name="ordine" ColumnName="ordine" />
+                <ScalarProperty Name="gallery_id" ColumnName="gallery_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Galleries">
+            <EntityTypeMapping TypeName="event_life_Model.Gallery">
+              <MappingFragment StoreEntitySet="Gallery">
+                <ScalarProperty Name="ID_gallery" ColumnName="ID_gallery" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gallery_tipo">
+            <EntityTypeMapping TypeName="event_life_Model.Gallery_tipo">
+              <MappingFragment StoreEntitySet="Gallery_tipo">
+                <ScalarProperty Name="ID_gallery_tipo" ColumnName="ID_gallery_tipo" />
+                <ScalarProperty Name="tipi_gallery_id" ColumnName="tipi_gallery_id" />
+                <ScalarProperty Name="profilo_id" ColumnName="profilo_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Livello_Utenti">
+            <EntityTypeMapping TypeName="event_life_Model.Livello_Utenti">
+              <MappingFragment StoreEntitySet="Livello_Utenti">
+                <ScalarProperty Name="ID_livello" ColumnName="ID_livello" />
+                <ScalarProperty Name="livello" ColumnName="livello" />
+                <ScalarProperty Name="descrizione" ColumnName="descrizione" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profiloes">
+            <EntityTypeMapping TypeName="event_life_Model.Profilo">
+              <MappingFragment StoreEntitySet="Profilo">
+                <ScalarProperty Name="longitudine" ColumnName="longitudine" />
+                <ScalarProperty Name="latitudine" ColumnName="latitudine" />
+                <ScalarProperty Name="ID_profilo" ColumnName="ID_profilo" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="logo" ColumnName="logo" />
+                <ScalarProperty Name="indirizzo" ColumnName="indirizzo" />
+                <ScalarProperty Name="cap" ColumnName="cap" />
+                <ScalarProperty Name="citta" ColumnName="citta" />
+                <ScalarProperty Name="desc_breve" ColumnName="desc_breve" />
+                <ScalarProperty Name="desc_long" ColumnName="desc_long" />
+                <ScalarProperty Name="utente_id" ColumnName="utente_id" />
+                <ScalarProperty Name="gallery_id" ColumnName="gallery_id" />
+                <ScalarProperty Name="categoria_id" ColumnName="categoria_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="event_life_Model.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Telefonoes">
+            <EntityTypeMapping TypeName="event_life_Model.Telefono">
+              <MappingFragment StoreEntitySet="Telefono">
+                <ScalarProperty Name="ID_telefono" ColumnName="ID_telefono" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="profilo_id" ColumnName="profilo_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Utentis">
+            <EntityTypeMapping TypeName="event_life_Model.Utenti">
+              <MappingFragment StoreEntitySet="Utenti">
+                <ScalarProperty Name="ID_utente" ColumnName="ID_utente" />
+                <ScalarProperty Name="usename" ColumnName="usename" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="livello_id" ColumnName="livello_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="event_life_Model.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="event_life_Model.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="event_life_Model.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="event_life_Model.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="event_life_Model.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="event_life_Model.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="event_life_Model.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="event_life_Model.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="event_life_Model.Store.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Nessuno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

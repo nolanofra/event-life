@@ -1,0 +1,40 @@
+﻿@model EL_Repository.Livello_Utenti
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Livello_Utenti</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ID_livello)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ID_livello)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.livello)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.livello)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.descrizione)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.descrizione)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

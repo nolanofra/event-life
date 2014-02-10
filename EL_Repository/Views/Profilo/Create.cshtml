@@ -1,0 +1,107 @@
+﻿@model EL_Repository.Profilo
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Profilo</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nome)
+            @Html.ValidationMessageFor(model => model.nome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.logo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.logo)
+            @Html.ValidationMessageFor(model => model.logo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.indirizzo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.indirizzo)
+            @Html.ValidationMessageFor(model => model.indirizzo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cap)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cap)
+            @Html.ValidationMessageFor(model => model.cap)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.citta)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.citta)
+            @Html.ValidationMessageFor(model => model.citta)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.desc_breve)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.desc_breve)
+            @Html.ValidationMessageFor(model => model.desc_breve)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.desc_long)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.desc_long)
+            @Html.ValidationMessageFor(model => model.desc_long)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.utente_id, "Utenti")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("utente_id", String.Empty)
+            @Html.ValidationMessageFor(model => model.utente_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.gallery_id, "Gallery")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("gallery_id", String.Empty)
+            @Html.ValidationMessageFor(model => model.gallery_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.categoria_id, "Categoria")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("categoria_id", String.Empty)
+            @Html.ValidationMessageFor(model => model.categoria_id)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
