@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="85e4a9fcaf0a4e2b928decaeab5b85de" Name="Diagramma1">
+        <EntityTypeShape EntityType="event_lifeModel.Anagrafica" Width="1.5" PointX="6" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="event_lifeModel.Categoria" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="event_lifeModel.Eventi" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="event_lifeModel.Foto" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="event_lifeModel.Gallery" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="event_lifeModel.Gallery_tipo" Width="1.5" PointX="2.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="event_lifeModel.Livello_Utenti" Width="1.5" PointX="1.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="event_lifeModel.Profilo" Width="1.5" PointX="6" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="event_lifeModel.sysdiagram" Width="1.5" PointX="5.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="event_lifeModel.Telefono" Width="1.5" PointX="8.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="event_lifeModel.Utenti" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="event_lifeModel.FK_Anagrafica_Utenti" ManuallyRouted="false" />
+        <AssociationConnector Association="event_lifeModel.FK_Eventi_Categoria" ManuallyRouted="false" />
+        <AssociationConnector Association="event_lifeModel.FK_Profilo_Categoria" ManuallyRouted="false" />
+        <AssociationConnector Association="event_lifeModel.FK_Eventi_Gallery" ManuallyRouted="false" />
+        <AssociationConnector Association="event_lifeModel.FK_Eventi_Profilo" ManuallyRouted="false" />
+        <AssociationConnector Association="event_lifeModel.FK_Foto_Gallery" ManuallyRouted="false" />
+        <AssociationConnector Association="event_lifeModel.FK_Profilo_Gallery" ManuallyRouted="false" />
+        <AssociationConnector Association="event_lifeModel.FK_Utenti_Livello_Utenti" ManuallyRouted="false" />
+        <AssociationConnector Association="event_lifeModel.FK_Profilo_Utenti" ManuallyRouted="false" />
+        <AssociationConnector Association="event_lifeModel.FK_Telefono_Profilo" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

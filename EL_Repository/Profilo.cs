@@ -17,27 +17,25 @@ namespace EL_Repository
         public Profilo()
         {
             this.Eventis = new HashSet<Eventi>();
-            this.Galleries = new HashSet<Gallery>();
             this.Telefonoes = new HashSet<Telefono>();
         }
     
-        public int ID_profilo { get; set; }
+        public System.Guid ID_profilo { get; set; }
         public string nome { get; set; }
         public string logo { get; set; }
         public string indirizzo { get; set; }
         public string cap { get; set; }
         public string citta { get; set; }
-        public string desc_breve { get; set; }
-        public string desc_long { get; set; }
-        public int utente_id { get; set; }
-        public Nullable<int> gallery_id { get; set; }
-        public int categoria_id { get; set; }
         public decimal latitudine { get; set; }
         public decimal longitudine { get; set; }
+        public string desc_breve { get; set; }
+        public string desc_long { get; set; }
+        public System.Guid utente_id { get; set; }
+        public Nullable<int> gallery_id { get; set; }
+        public int categoria_id { get; set; }
     
         public virtual Categoria Categoria { get; set; }
         public virtual ICollection<Eventi> Eventis { get; set; }
-        public virtual ICollection<Gallery> Galleries { get; set; }
         public virtual Gallery Gallery { get; set; }
         public virtual Utenti Utenti { get; set; }
         public virtual ICollection<Telefono> Telefonoes { get; set; }

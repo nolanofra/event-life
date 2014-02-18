@@ -20,7 +20,7 @@ namespace EL_Repository
             this.Profiloes = new HashSet<Profilo>();
         }
     
-        public int ID_utente { get; set; }
+        public System.Guid ID_utente { get; set; }
         public string usename { get; set; }
         public string password { get; set; }
         public int livello_id { get; set; }

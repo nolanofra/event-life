@@ -10,7 +10,7 @@ namespace EL_Repository.Controllers
 {
     public class LivelliUtentiController : Controller
     {
-        private event_life_Entities db = new event_life_Entities();
+        private event_lifeEntities db = new event_lifeEntities();
 
         //
         // GET: /LivelliUtenti/

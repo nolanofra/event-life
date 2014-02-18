@@ -16,7 +16,7 @@ namespace EL_Repository
     {
         public int ID_telefono { get; set; }
         public string tel { get; set; }
-        public int profilo_id { get; set; }
+        public System.Guid profilo_id { get; set; }
     
         public virtual Profilo Profilo { get; set; }
     }

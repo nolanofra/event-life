@@ -21,7 +21,7 @@ namespace EL_Repository
         public Nullable<int> gallery_id { get; set; }
         public System.DateTime data_inizio { get; set; }
         public System.DateTime data_fine { get; set; }
-        public int profilo_id { get; set; }
+        public System.Guid profilo_id { get; set; }
         public int categoria_id { get; set; }
     
         public virtual Categoria Categoria { get; set; }

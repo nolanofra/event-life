@@ -26,7 +26,7 @@ namespace EL_Repository
         public string citta { get; set; }
         public string provincia { get; set; }
         public string carta_identita { get; set; }
-        public int utente_id { get; set; }
+        public System.Guid utente_id { get; set; }
         public string tel { get; set; }
         public string cell { get; set; }
         public string fax { get; set; }

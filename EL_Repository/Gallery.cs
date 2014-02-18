@@ -22,11 +22,10 @@ namespace EL_Repository
         }
     
         public int ID_gallery { get; set; }
-        public Nullable<int> nome { get; set; }
+        public string nome { get; set; }
     
         public virtual ICollection<Eventi> Eventis { get; set; }
         public virtual ICollection<Foto> Fotoes { get; set; }
-        public virtual Profilo Profilo { get; set; }
         public virtual ICollection<Profilo> Profiloes { get; set; }
     }
 }

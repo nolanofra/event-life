@@ -16,10 +16,10 @@ namespace EL_Repository
     using System.Data.Objects.DataClasses;
     using System.Linq;
     
-    public partial class event_life_Entities : DbContext
+    public partial class event_lifeEntities : DbContext
     {
-        public event_life_Entities()
-            : base("name=event_life_Entities")
+        public event_lifeEntities()
+            : base("name=event_lifeEntities")
         {
         }
     
