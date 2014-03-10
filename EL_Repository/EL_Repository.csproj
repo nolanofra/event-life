@@ -194,6 +194,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AnagraficaController.cs" />
     <Compile Include="Controllers\CategorieController.cs" />
+    <Compile Include="Controllers\EventiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LivelliUtentiController.cs" />
     <Compile Include="Controllers\ProfiloController.cs" />
@@ -406,6 +407,11 @@
     <Content Include="Views\Categorie\Create.cshtml" />
     <Content Include="Views\Categorie\Edit.cshtml" />
     <Content Include="Views\Categorie\Delete.cshtml" />
+    <Content Include="Views\Eventi\Index.cshtml" />
+    <Content Include="Views\Eventi\Details.cshtml" />
+    <Content Include="Views\Eventi\Create.cshtml" />
+    <Content Include="Views\Eventi\Edit.cshtml" />
+    <Content Include="Views\Eventi\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

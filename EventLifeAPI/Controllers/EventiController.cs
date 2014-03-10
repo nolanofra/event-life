@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -13,27 +12,27 @@ using EL_Repository;
 
 namespace EventLifeAPI.Controllers
 {
-    public class CategorieController : ApiController
+    public class EventiController : ApiController
     {
         private event_lifeEntities db = new event_lifeEntities();
 
-        // GET api/Categorie        
-        public IEnumerable<Categoria> GetCategorias()
+        // GET api/Eventi
+        public IEnumerable<Eventi> GetEventis()
         {
-            var categorias = db.Categorias;
-            return categorias.AsEnumerable();
+            var eventis = db.Eventis.Include(e => e.Categoria).Include(e => e.Gallery).Include(e => e.Profilo);
+            return eventis.AsEnumerable();
         }
 
-        // GET api/Categorie/5
-        public Categoria GetCategoria(int id)
+        // GET api/Eventi/5
+        public Eventi GetEventi(int id)
         {
-            Categoria categoria = db.Categorias.Find(id);
-            if (categoria == null)
+            Eventi eventi = db.Eventis.Find(id);
+            if (eventi == null)
             {
                 throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
             }
 
-            return categoria;
+            return eventi;
         }        
 
         protected override void Dispose(bool disposing)
@@ -41,5 +40,5 @@ namespace EventLifeAPI.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
-    }        
+    }
 }

@@ -22,10 +22,9 @@ namespace EL_Repository
         public System.DateTime data_inizio { get; set; }
         public System.DateTime data_fine { get; set; }
         public System.Guid profilo_id { get; set; }
-        public int categoria_id { get; set; }
-    
+        public int categoria_id { get; set; }    
         public virtual Categoria Categoria { get; set; }
-        public virtual Gallery Gallery { get; set; }
+        public virtual Gallery Gallery { get; set; }        
         public virtual Profilo Profilo { get; set; }
     }
 }

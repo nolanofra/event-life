@@ -1,0 +1,92 @@
+﻿@model EL_Repository.Eventi
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Eventi</legend>
+      
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Titolo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Titolo)
+            @Html.ValidationMessageFor(model => model.Titolo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.desc_breve)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.desc_breve)
+            @Html.ValidationMessageFor(model => model.desc_breve)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.desc_lunga)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.desc_lunga)
+            @Html.ValidationMessageFor(model => model.desc_lunga)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.gallery_id, "Gallery")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("gallery_id", String.Empty)
+            @Html.ValidationMessageFor(model => model.gallery_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.data_inizio)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.data_inizio)
+            @Html.ValidationMessageFor(model => model.data_inizio)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.data_fine)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.data_fine)
+            @Html.ValidationMessageFor(model => model.data_fine)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.profilo_id, "Profilo")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("profilo_id", String.Empty)
+            @Html.ValidationMessageFor(model => model.profilo_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.categoria_id, "Categoria")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("categoria_id", String.Empty)
+            @Html.ValidationMessageFor(model => model.categoria_id)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -26,8 +26,8 @@ namespace EventLifeAPI
             config.EnableSystemDiagnosticsTracing();
 
 
-            //config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling
-            //= Newtonsoft.Json.ReferenceLoopHandling.Ignore; 
+            config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling
+            = Newtonsoft.Json.ReferenceLoopHandling.Ignore; 
         }
     }
 }

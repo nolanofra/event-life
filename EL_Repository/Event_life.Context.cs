@@ -21,6 +21,7 @@ namespace EL_Repository
         public event_lifeEntities()
             : base("name=event_lifeEntities")
         {
+            this.Configuration.LazyLoadingEnabled = false; 
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
