@@ -98,9 +98,6 @@ c:\users\rapoasus\documents\visual studio 2012\Projects\EventLife\EL_Repository\
 c:\users\rapoasus\documents\visual studio 2012\Projects\EventLife\EL_Repository\obj\Debug\EL_Repository.csprojResolveAssemblyReference.cache
 c:\users\rapoasus\documents\visual studio 2012\Projects\EventLife\EL_Repository\obj\Debug\EL_Repository.dll
 c:\users\rapoasus\documents\visual studio 2012\Projects\EventLife\EL_Repository\obj\Debug\EL_Repository.pdb
-C:\Users\rapoasus\Desktop\EventLife\EL_Repository\obj\Debug\EL_Repository.csprojResolveAssemblyReference.cache
-C:\Users\rapoasus\Desktop\EventLife\EL_Repository\obj\Debug\EL_Repository.dll
-C:\Users\rapoasus\Desktop\EventLife\EL_Repository\obj\Debug\EL_Repository.pdb
 C:\Users\rapoasus\Desktop\EventLife\EL_Repository\bin\EL_Repository.dll
 C:\Users\rapoasus\Desktop\EventLife\EL_Repository\bin\EL_Repository.pdb
 C:\Users\rapoasus\Desktop\EventLife\EL_Repository\bin\Antlr3.Runtime.dll
@@ -198,3 +195,6 @@ C:\Users\rapoasus\Desktop\EventLife\EL_Repository\bin\ko\System.Spatial.resource
 C:\Users\rapoasus\Desktop\EventLife\EL_Repository\bin\ru\System.Spatial.resources.dll
 C:\Users\rapoasus\Desktop\EventLife\EL_Repository\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\rapoasus\Desktop\EventLife\EL_Repository\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\rapoasus\Desktop\EventLife\EL_Repository\obj\Debug\EL_Repository.dll
+C:\Users\rapoasus\Desktop\EventLife\EL_Repository\obj\Debug\EL_Repository.pdb
+C:\Users\rapoasus\Desktop\EventLife\EL_Repository\obj\Debug\EL_Repository.csprojResolveAssemblyReference.cache

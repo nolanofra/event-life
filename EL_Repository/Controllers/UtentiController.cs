@@ -24,7 +24,7 @@ namespace EL_Repository.Controllers
         //
         // GET: /Utenti/Details/5
 
-        public ActionResult Details(int id = 0)
+        public ActionResult Details(Guid id )
         {
             Utenti utenti = db.Utentis.Find(id);
             if (utenti == null)
@@ -52,6 +52,7 @@ namespace EL_Repository.Controllers
         {
             if (ModelState.IsValid)
             {
+                utenti.ID_utente = Guid.NewGuid();
                 db.Utentis.Add(utenti);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -64,7 +65,7 @@ namespace EL_Repository.Controllers
         //
         // GET: /Utenti/Edit/5
 
-        public ActionResult Edit(int id = 0)
+        public ActionResult Edit(Guid id )
         {
             Utenti utenti = db.Utentis.Find(id);
             if (utenti == null)
@@ -95,7 +96,7 @@ namespace EL_Repository.Controllers
         //
         // GET: /Utenti/Delete/5
 
-        public ActionResult Delete(int id = 0)
+        public ActionResult Delete(Guid id )
         {
             Utenti utenti = db.Utentis.Find(id);
             if (utenti == null)
@@ -110,7 +111,7 @@ namespace EL_Repository.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(Guid id)
         {
             Utenti utenti = db.Utentis.Find(id);
             db.Utentis.Remove(utenti);

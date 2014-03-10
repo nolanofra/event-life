@@ -172,7 +172,7 @@
           <Key>
             <PropertyRef Name="ID_utente" />
           </Key>
-          <Property Name="ID_utente" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ID_utente" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="None" />
           <Property Name="usename" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="password" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="livello_id" Type="int" Nullable="false" />
@@ -547,7 +547,7 @@
           <Key>
             <PropertyRef Name="ID_utente" />
           </Key>
-          <Property Name="ID_utente" Type="Guid" Nullable="false" />
+          <Property Name="ID_utente" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
           <Property Name="usename" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="password" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="livello_id" Type="Int32" Nullable="false" />
