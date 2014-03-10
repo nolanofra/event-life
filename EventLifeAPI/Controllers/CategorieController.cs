@@ -18,13 +18,9 @@ namespace EventLifeAPI.Controllers
         private event_lifeEntities db = new event_lifeEntities();
 
         // GET api/Categorie        
-        public Pippo GetCategorias()
-        {
-            Pippo p = new Pippo();
-            p.rapetti = "suca";
-            p.suca = "rapetti";
-            return p;
-            //return db.Categorias.AsEnumerable();
+        public IEnumerable<Categoria> GetCategorias()
+        {                        
+            return db.Categorias.AsEnumerable();
         }
 
         // GET api/Categorie/5
@@ -112,11 +108,5 @@ namespace EventLifeAPI.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
-    }
-    
-    public class Pippo
-    {
-        public string suca { get; set; }
-        public string rapetti { get; set; }
-    }
+    }        
 }
