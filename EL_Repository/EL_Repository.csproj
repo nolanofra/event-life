@@ -193,6 +193,7 @@
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AnagraficaController.cs" />
+    <Compile Include="Controllers\CategorieController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LivelliUtentiController.cs" />
     <Compile Include="Controllers\ProfiloController.cs" />
@@ -400,6 +401,11 @@
     <Content Include="Views\Profilo\Create.cshtml" />
     <Content Include="Views\Profilo\Edit.cshtml" />
     <Content Include="Views\Profilo\Delete.cshtml" />
+    <Content Include="Views\Categorie\Index.cshtml" />
+    <Content Include="Views\Categorie\Details.cshtml" />
+    <Content Include="Views\Categorie\Create.cshtml" />
+    <Content Include="Views\Categorie\Edit.cshtml" />
+    <Content Include="Views\Categorie\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

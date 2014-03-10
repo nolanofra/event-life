@@ -54,8 +54,10 @@ namespace EL_Repository.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Profiloes.Add(profilo);
-                db.SaveChanges();
+                profilo.ID_profilo = Guid.NewGuid();
+                db.Profiloes.Add(profilo);                
+                db.SaveChanges();           
+                
                 return RedirectToAction("Index");
             }
 

@@ -51,6 +51,22 @@
             @Html.EditorFor(model => model.citta)
             @Html.ValidationMessageFor(model => model.citta)
         </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.latitudine)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.latitudine)
+            @Html.ValidationMessageFor(model => model.latitudine)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.longitudine)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.longitudine)
+            @Html.ValidationMessageFor(model => model.longitudine)
+        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.desc_breve)

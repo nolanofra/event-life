@@ -48,7 +48,21 @@
          @Html.DisplayNameFor(model => model.citta)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.citta)
+        @Html.DisplayFor(model => model.citta)        
+    </div>
+    
+     <div class="display-label">
+        @Html.DisplayNameFor(model => model.latitudine)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.latitudine)
+    </div>
+
+    <div class="display-label">
+            @Html.DisplayNameFor(model => model.longitudine)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.longitudine)
     </div>
 
     <div class="display-label">
@@ -87,6 +101,6 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Edit", "Edit", new {  id=Model.ID_profilo }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

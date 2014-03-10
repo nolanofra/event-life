@@ -24,6 +24,10 @@ namespace EventLifeAPI
             // Per ulteriori informazioni, visitare: http://www.asp.net/web-api
             config.Formatters.Remove(config.Formatters.XmlFormatter);
             config.EnableSystemDiagnosticsTracing();
+
+
+            //config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling
+            //= Newtonsoft.Json.ReferenceLoopHandling.Ignore; 
         }
     }
 }

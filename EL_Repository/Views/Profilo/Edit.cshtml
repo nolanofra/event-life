@@ -14,14 +14,6 @@
         <legend>Profilo</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.ID_profilo)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ID_profilo)
-            @Html.ValidationMessageFor(model => model.ID_profilo)
-        </div>
-
-        <div class="editor-label">
             @Html.LabelFor(model => model.nome)
         </div>
         <div class="editor-field">
@@ -59,6 +51,22 @@
         <div class="editor-field">
             @Html.EditorFor(model => model.citta)
             @Html.ValidationMessageFor(model => model.citta)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.latitudine)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.latitudine)
+            @Html.ValidationMessageFor(model => model.latitudine)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.longitudine)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.longitudine)
+            @Html.ValidationMessageFor(model => model.longitudine)
         </div>
 
         <div class="editor-label">

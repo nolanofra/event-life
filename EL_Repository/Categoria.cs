@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Newtonsoft.Json;
+
 namespace EL_Repository
 {
     using System;
@@ -22,8 +24,10 @@ namespace EL_Repository
     
         public int ID_categoria { get; set; }
         public string Titolo { get; set; }
-    
+
+        [JsonIgnore]
         public virtual ICollection<Eventi> Eventis { get; set; }
+        [JsonIgnore]
         public virtual ICollection<Profilo> Profiloes { get; set; }
     }
 }

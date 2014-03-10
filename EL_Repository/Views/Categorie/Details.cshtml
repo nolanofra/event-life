@@ -1,0 +1,29 @@
+﻿@model EL_Repository.Categoria
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Categoria</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ID_categoria)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ID_categoria)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Titolo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Titolo)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id=Model.ID_categoria}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

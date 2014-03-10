@@ -29,7 +29,16 @@
         <th>
             @Html.DisplayNameFor(model => model.citta)
         </th>
- <th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.latitudine)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.longitudine)
+        </th>
+
+        <th>
             @Html.DisplayNameFor(model => model.desc_breve)
         </th>
         <th>
@@ -67,6 +76,15 @@
         <td>
             @Html.DisplayFor(modelItem => item.citta)
         </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.latitudine)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.longitudine)
+        </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.desc_breve)
         </td>
@@ -83,9 +101,9 @@
             @Html.DisplayFor(modelItem => item.Categoria.Titolo)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "Edit", new {  id=item.ID_profilo }) |
+            @Html.ActionLink("Details", "Details", new {  id=item.ID_profilo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_profilo })
         </td>
     </tr>
 }
