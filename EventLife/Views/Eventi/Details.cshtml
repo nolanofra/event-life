@@ -1,0 +1,71 @@
+﻿@model EL_Repository.Eventi
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Eventi</legend>    
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Titolo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Titolo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.desc_breve)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.desc_breve)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.desc_lunga)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.desc_lunga)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Gallery.nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Gallery.nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.data_inizio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.data_inizio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.data_fine)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.data_fine)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Profilo.nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Profilo.nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Categoria.Titolo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Categoria.Titolo)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id=Model.Id_evento }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

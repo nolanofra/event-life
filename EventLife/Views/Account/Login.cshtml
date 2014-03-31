@@ -1,4 +1,4 @@
-﻿@model EventLife.Models.LoginModel
+﻿@model EL_Repository.Utenti
 
 @{
     ViewBag.Title = "Accedi";
@@ -18,32 +18,32 @@
         <legend>Form di accesso</legend>
         <ol>
             <li>
-                @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName)
-                @Html.ValidationMessageFor(m => m.UserName)
+                @Html.LabelFor(m => m.usename)
+                @Html.TextBoxFor(m => m.usename)
+                @Html.ValidationMessageFor(m => m.usename)
             </li>
             <li>
-                @Html.LabelFor(m => m.Password)
-                @Html.PasswordFor(m => m.Password)
-                @Html.ValidationMessageFor(m => m.Password)
+                @Html.LabelFor(m => m.password)
+                @Html.PasswordFor(m => m.password)
+                @Html.ValidationMessageFor(m => m.password)
             </li>
-            <li>
+           @* <li>
                 @Html.CheckBoxFor(m => m.RememberMe)
                 @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
-            </li>
+            </li>*@
         </ol>
         <input type="submit" value="Accedi" />
     </fieldset>
-    <p>
+    @*<p>
         @Html.ActionLink("Registrazione", "Register") se non si dispone di un account.
-    </p>
+    </p>*@
 }
 </section>
 
-<section class="social" id="socialLoginForm">
+@*<section class="social" id="socialLoginForm">
     <h2>Utilizzare un altro servizio per eseguire l'accesso.</h2>
     @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
-</section>
+</section>*@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

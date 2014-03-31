@@ -10,6 +10,7 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using EventLife.Filters;
 using EventLife.Models;
+using EL_Repository;
 
 namespace EventLife.Controllers
 {
@@ -17,6 +18,8 @@ namespace EventLife.Controllers
     [InitializeSimpleMembership]
     public class AccountController : Controller
     {
+
+        private event_lifeEntities db = new event_lifeEntities();
         //
         // GET: /Account/Login
 
@@ -26,23 +29,29 @@ namespace EventLife.Controllers
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
-
+        
         //
         // POST: /Account/Login
 
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(LoginModel model, string returnUrl)
+        public ActionResult Login(Utenti utente, string returnUrl)
         {
-            if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
+            // if (user is found on db)
+
+            if (ModelState.IsValid && IsUserFoundOnDB(utente))
             {
                 return RedirectToLocal(returnUrl);
-            }
-
+            }            
             // Se si arriva a questo punto, significa che si è verificato un errore, rivisualizzare il form
             ModelState.AddModelError("", "Il nome utente o la password fornita non è corretta.");
-            return View(model);
+            return View(utente);
+        }
+
+        private bool IsUserFoundOnDB(Utenti utente)
+        {
+            return db.Utentis.Any(u => u.usename.Equals(utente.usename) && u.password.Equals(utente.password));
         }
 
         //
